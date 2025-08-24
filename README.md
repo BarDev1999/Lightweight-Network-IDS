@@ -1,4 +1,4 @@
-# 🐍 Python SYN IDS 🚦
+<img width="1902" height="922" alt="normalterm" src="https://github.com/user-attachments/assets/581dea36-51f6-40ab-b296-6de894cbea56" /># 🐍 Python SYN IDS 🚦
 *A minimal Intrusion Detection System (IDS) with a live dashboard & PCAP evidence*
 
 This project is a lightweight IDS written in Python.
@@ -85,6 +85,8 @@ Status: Monitoring... All clear.
 ```
 
 **When a port scan is detected:**
+<img width="1407" height="804" alt="alertterm" src="https://github.com/user-attachments/assets/65f6e9ac-1496-4775-aef0-60df88f0a185" />
+
 ```
 [*] Last Alert (21:30:12): PORT SCAN from 127.0.0.1. Evidence saved to evidence/scan...
 ```
