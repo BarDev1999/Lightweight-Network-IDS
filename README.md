@@ -15,7 +15,6 @@ This is a project I built to deepen my understanding of data communications and 
 ---
 
 ### 🖼️ Showcase
-<img width="1173" height="753" alt="image" src="https://github.com/user-attachments/assets/646f6728-f816-46b7-936c-20a5c2feaec1" />
 <img width="1902" height="922" alt="normalterm" src="https://github.com/user-attachments/assets/3b942c29-8003-4ccf-bdca-dc30c8913276" />
 <img width="1407" height="804" alt="alertterm" src="https://github.com/user-attachments/assets/7eed5f88-d8f2-49d0-8928-b2b7fe3b773d" />
 
