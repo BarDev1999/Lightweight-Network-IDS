@@ -1,4 +1,4 @@
-<img width="1902" height="922" alt="normalterm" src="https://github.com/user-attachments/assets/581dea36-51f6-40ab-b296-6de894cbea56" /># 🐍 Python SYN IDS 🚦
+# 🐍 Python SYN IDS 🚦
 *A minimal Intrusion Detection System (IDS) with a live dashboard & PCAP evidence*
 
 This project is a lightweight IDS written in Python.
