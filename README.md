@@ -1,24 +1,39 @@
-# 🐍 Python SYN IDS 🚦
-*A minimal Intrusion Detection System (IDS) with a live dashboard & PCAP evidence*
+# 🐍 Python Network IDS
+*A lightweight, command-line Intrusion Detection System with a live dashboard & PCAP evidence capture.*
 
-This project is a lightweight IDS written in Python.
-It monitors live network traffic, detects suspicious SYN-based port scans, logs alerts, and saves raw packet evidence for later analysis.
-
----
-## ✨ Features
-* **Real-time detection** of SYN flood & port scanning attempts
-* **Live dashboard** with Rich (interactive console table)
-* **Rotating logs** (`ids_alerts.log`) with severity levels
-* **PCAP evidence files** saved automatically in `evidence/`
-* **Configurable via CLI** – no need to edit the code
+This is a project I built to deepen my understanding of data communications and cybersecurity. It's a lightweight IDS written in Python that monitors live network traffic, detects suspicious SYN-based port scans, logs alerts, and saves raw packet evidence for forensic analysis.
 
 ---
+## ✨ Key Features
+* **Live Dashboard:** Real-time traffic display using the Rich library.
+* 🛡️ **SYN Scan Detection:** A robust, stateful engine to detect SYN-based port scans.
+* **PCAP Evidence:** Saves all packets from a detected scan to a `.pcap` file for analysis in tools like Wireshark.
+* **Dynamic & Robust:** Automatically detects available interfaces, uses efficient BPF filters, and handles errors gracefully.
+* **Professional Logging:** Alerts are saved to a rotating log file to prevent disk space issues.
+* **Fully Configurable:** All parameters (interfaces, thresholds, etc.) can be controlled via CLI arguments.
+
+---
+
+### 🖼️ Showcase
+*(This is a great place for a GIF of the dashboard in action and a screenshot of the Wireshark evidence!)*
+<img width="1173" height="753" alt="image" src="https://github.com/user-attachments/assets/646f6728-f816-46b7-936c-20a5c2feaec1" />
+
+
+---
+
+### ✅ Prerequisites
+* Python 3.8+
+* Root/Administrator privileges to run.
+* On Windows, [Npcap](https://npcap.com/) must be installed.
+
+---
+
 ## 🚀 Quick Start
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YOUR-USERNAME/sniffer-ids.git](https://github.com/YOUR-USERNAME/sniffer-ids.git)
-    cd sniffer-ids
+    git clone [https://github.com/BarDev1999/Lightweight-Network-IDS.git](https://github.com/BarDev1999/Lightweight-Network-IDS.git)
+    cd Lightweight-Network-IDS
     ```
 
 2.  **Install dependencies:**
@@ -26,82 +41,26 @@ It monitors live network traffic, detects suspicious SYN-based port scans, logs 
     pip install -r requirements.txt
     ```
 
-3.  **Run the IDS** (example on loopback interface):
+3.  **Run the IDS:**
     ```bash
-    sudo python3 sniffer_proj.py --interfaces lo --log-level info
+    # On Linux/macOS
+    sudo python3 sniffer.py
     ```
 
-4.  **(Optional) Simulate an attack in another terminal
-
-To test the IDS, you can use nmap to generate port scan traffic. Here are two common examples:
-
-Example A: Internal Scan (testing the lo interface)
-Run this command from a terminal inside the VM.
-
-Bash
-
-sudo nmap -sS -p 1-1024 127.0.0.1
-Example B: External Scan (testing the external interface)
-Run this command from your host machine or another computer on the network.
-
-Bash
-
-nmap -sS -Pn <VM_IP_ADDRESS>
-(Replace <VM_IP_ADDRESS> with your VM's actual network IP, such as 192.168.71.3)
-
 ---
-## ⚙️ CLI Options
 
-| Flag / Option              | Description                                                      | Example                               |
-| -------------------------- | ---------------------------------------------------------------- | ------------------------------------- |
-| `--interfaces`             | List of interfaces to monitor.                                   | `--interfaces lo enp0s3`              |
-| `--port-scan-threshold`    | SYN packets within the time window to trigger an alert.          | `--port-scan-threshold 15`            |
-| `--time-window-seconds`    | Sliding time window (seconds) for scan detection.                | `--time-window-seconds 10`            |
-| `--alert-cooldown-seconds` | Cooldown before the same IP can trigger another alert.           | `--alert-cooldown-seconds 30`         |
-| `--log-level`              | Logging verbosity (info = normal, debug = verbose).              | `--log-level debug`                   |
+## ⚙️ Lab Demo Commands
+You can test the IDS safely in your lab environment with these commands:
 
----
-## 📂 Project Structure
-```
-SnifferProject/
-├── sniffer_proj.py       # Main IDS script
-├── requirements.txt      # Python dependencies
-├── .gitignore            # Ignore cache, venv, logs, evidence
-├── README.md             # Project documentation
-├── LICENSE               # MIT License
-└── evidence/             # PCAP evidence files (auto-created)
+```bash
+# Nmap Scan (targets ports 1-200 on localhost)
+sudo nmap -sS -p 1-200 127.0.0.1
+
+# Hping3 Scan (sends 120 SYN packets to incrementing ports starting from 80)
+sudo hping3 -S --flood --rand-source -p ++80 -c 120 127.0.0.1
 ```
 
 ---
-## 🔍 Example Output
 
-**Normal monitoring (no alerts):**
-```
-[*] Starting IDS v2.0 (Self-Healing & Robust)...
-[*] Monitoring interfaces: lo
-[*] Press Ctrl+C to stop.
-Live Network Traffic Dashboard (Monitoring: lo) 🚦
-Status: Monitoring... All clear.
-```
-
-**When a port scan is detected:**
-<img width="1407" height="804" alt="alertterm" src="https://github.com/user-attachments/assets/65f6e9ac-1496-4775-aef0-60df88f0a185" />
-
-```
-[*] Last Alert (21:30:12): PORT SCAN from 127.0.0.1. Evidence saved to evidence/scan...
-```
-
----
-## 🛠️ Requirements
-* Python 3.10+
-* scapy
-* rich
-* (optional) `nmap` or `hping3` for testing
-
----
 ## 📜 License
-MIT License — feel free to use, modify, and share, but please keep attribution.
-
----
-## 💡 About
-This project was built as a hands-on learning project in Python, Networking, and Cybersecurity fundamentals. It’s intentionally minimal but designed to be extended (e.g., support for IPv6, detection of FIN/NULL/XMAS scans, etc.).
+This project is licensed under the MIT License.
