@@ -1,4 +1,4 @@
-# 🐍 Python Network IDS
+# 🐍 SniffGuard-Python Network IDS
 *A lightweight, command-line Intrusion Detection System with a live dashboard & PCAP evidence capture.*
 
 This is a project I built to deepen my understanding of data communications and cybersecurity. It's a lightweight IDS written in Python that monitors live network traffic, detects suspicious SYN-based port scans, logs alerts, and saves raw packet evidence for forensic analysis.
