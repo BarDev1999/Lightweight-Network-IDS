@@ -1,4 +1,4 @@
-# 🐍 SniffGuard-Python Network IDS
+# SniffGuard 🛡️
 *A lightweight, command-line Intrusion Detection System with a live dashboard & PCAP evidence capture.*
 
 This is a project I built to deepen my understanding of data communications and cybersecurity. It's a lightweight IDS written in Python that monitors live network traffic, detects suspicious SYN-based port scans, logs alerts, and saves raw packet evidence for forensic analysis.
@@ -15,11 +15,9 @@ This is a project I built to deepen my understanding of data communications and 
 ---
 
 ### 🖼️ Showcase
-<img width="1902" height="922" alt="normalterm" src="https://github.com/user-attachments/assets/3b942c29-8003-4ccf-bdca-dc30c8913276" />
-<img width="1407" height="804" alt="alertterm" src="https://github.com/user-attachments/assets/7eed5f88-d8f2-49d0-8928-b2b7fe3b773d" />
-
-
-
+| Normal Monitoring | Alert Triggered |
+| :---: | :---: |
+| ![Normal Terminal](https://github.com/user-attachments/assets/3b942c29-8003-4ccf-bdca-dc30c8913276) | ![Alert Terminal](https://github.com/user-attachments/assets/7eed5f88-d8f2-49d0-8928-b2b7fe3b773d) |
 
 ---
 
@@ -34,8 +32,8 @@ This is a project I built to deepen my understanding of data communications and 
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/BarDev1999/Lightweight-Network-IDS.git](https://github.com/BarDev1999/Lightweight-Network-IDS.git)
-    cd Lightweight-Network-IDS
+    git clone [https://github.com/BarDev1999/SniffGuard.git](https://github.com/BarDev1999/SniffGuard.git)
+    cd SniffGuard
     ```
 
 2.  **Install dependencies:**
@@ -46,7 +44,7 @@ This is a project I built to deepen my understanding of data communications and 
 3.  **Run the IDS:**
     ```bash
     # On Linux/macOS
-    sudo python3 sniffer.py
+    sudo python3 sniffer_proj.py
     ```
 
 ---
