@@ -15,6 +15,8 @@ This is a project I built to deepen my understanding of data communications and 
 ---
 
 ### 🖼️ Showcase
+Here is a short video demonstrating the project's core functionality:
+https://youtu.be/RRBL-ykiJFo
 | Normal Monitoring | Alert Triggered |
 | :---: | :---: |
 | ![Normal Terminal](https://github.com/user-attachments/assets/3b942c29-8003-4ccf-bdca-dc30c8913276) | ![Alert Terminal](https://github.com/user-attachments/assets/7eed5f88-d8f2-49d0-8928-b2b7fe3b773d) |
